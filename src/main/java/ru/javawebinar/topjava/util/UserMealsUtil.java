@@ -42,7 +42,8 @@ public class UserMealsUtil {
         //System.out.println(actualCaloriesPerDay);
 
         List<UserMealWithExceed> userMealWithExceedList = new ArrayList<>();
-                mealList.stream()
+
+        mealList.stream()
                 .filter(um -> TimeUtil.isBetween(um.getDateTime().toLocalTime(), startTime, endTime))
                 .forEach(um -> userMealWithExceedList.add(new UserMealWithExceed(
                         um.getDateTime(), um.getDescription(), um.getCalories(),
